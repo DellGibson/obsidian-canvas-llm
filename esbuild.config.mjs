@@ -11,7 +11,7 @@ if you want to view the source, please visit the github repository of this plugi
 `;
 
 const prod = (process.argv[2] === "production");
-const outdir = "../vault_dev/.obsidian/plugins/canvas-llm";
+const outdir = process.env.USERPROFILE + "/OneDrive/Documents/Obsidian Vault/.obsidian/plugins/canvas-llm";
 
 async function copyStatic() 
 {

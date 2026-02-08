@@ -19,13 +19,15 @@
                     <div class="setting-item">
                         <div class="setting-item-info">
                             <div class="setting-item-name">
-                                {provider.name} 
-                                <a 
-                                    href="{provider.keys}" 
-                                    target="_blank" 
-                                    aria-label="Get API key from {provider.name}">
-                                    <SquareArrowOutUpRight size={16} />
-                                </a>
+                                {provider.name}
+                                {#if provider.keys}
+                                    <a
+                                        href="{provider.keys}"
+                                        target="_blank"
+                                        aria-label="Get API key from {provider.name}">
+                                        <SquareArrowOutUpRight size={16} />
+                                    </a>
+                                {/if}
                             </div>
                             <div class="setting-item-description"></div>
                         </div>
@@ -34,7 +36,7 @@
                                 type="text"
                                 class="inputbox1" 
                                 bind:value={appState.settings.Data[provider.id + "Key"]} 
-                                placeholder="API key for {provider.name}"
+                                placeholder={provider.keyPlaceholder || `API key for ${provider.name}`}
                                 onchange={() => appState.settings.Save()} />
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import alibaba      from '$lib/providers/alibaba.js';
 import anthropic    from '$lib/providers/anthropic.js';
+import custom       from '$lib/providers/custom.js';
 import deepseek     from '$lib/providers/deepseek.js';
 import google       from '$lib/providers/google.js';
 import groq         from '$lib/providers/groq.js';
@@ -10,8 +11,9 @@ import xai          from '$lib/providers/xai.js';
 
 class ProviderInfo
 {
-    List = 
+    List =
     [
+        custom,
         alibaba,
         anthropic,
         deepseek,
